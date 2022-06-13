@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dz-8</title>
+    <style>
+        body{
+            background-color: #326b76;
+        }
+        .container{
+            margin-top: 10px;
+            
+        }
+        .big-block{
+            margin: 0 auto;
+            margin-top: 20px;
+            width: 444px;
+            height: 444px;
+            border: 1px solid;
+            position: relative;
+        }
+        .small-block{
+            width: 44px;
+            height: 44px; 
+            background-color: orangered;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="innInput">inn num</label>
+        <input class="innInput" placeholder="1XXXXXXXXXXXXXX or 0XXXXXXXXXXXXXX" type="text">
+        <button class="innCheck">Check</button>
+        <span class="innResult"></span>
+    </div>
+    <div class="big-block">
+        <div class="small-block"></div>>
+    </div>
+    <script src="gt.js"></script>
+</body>
+</html>
