@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<style>
+        body{
+            background: url(image/1625663273_21-kartinkin-com-p-oboi-dengi-krasivie-28.jpg);
+        }
+		.wrapper{
+            background-color: #ffffff2b;
+            width: 469px;
+            height: 491px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+            margin: 0 auto;
+            border-radius: 20px;
+            border: 1px solid #0000006b;
+		}
+        .som{
+            margin-bottom: 20px;
+        }
+		.som label{
+			color: green;
+			font-weight: 500;
+			font-size: 25px;
+		}
+		.euro label {
+			color: green;
+			font-weight: 500;
+			font-size: 25px;
+		}
+		.som input{
+			border-radius: 10px;
+			width: 200px;
+			height: 20px;
+			color: green;
+			font-size: 18px;
+			font-weight: 400;
+		}
+		.euro input {
+			border-radius: 10px;
+			width: 200px;
+			height: 20px;
+			font-size: 18px;
+			font-weight: 400;
+		}
+    .euro {
+      margin: 20px;
+    }
+    .usd label {
+      color: green;
+			font-weight: 500;
+			font-size: 25px;
+    }
+    .usd input {
+      border-radius: 10px;
+			width: 200px;
+			height: 20px;
+			font-size: 18px;
+			font-weight: 400;
+    }
+	</style>
+	<body>
+		<div class="wrapper">
+			<div class="som">
+				<label for="som">SOM</label>
+				<input type="number" id="som">
+			</div>
+            <div class="usd">
+				<label for="usd">USD</label>
+				<input type="number" id="usd">
+			</div>
+			<div class="euro">
+				<label for="euro">EURO</label>
+				<input type="number" id="euro">
+			</div>
+		</div>
+	</body>
+	<script src="app.js"></script>
+</html>
