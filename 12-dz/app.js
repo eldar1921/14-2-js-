@@ -2,7 +2,7 @@ const som = document.querySelector("#som");
 const usd = document.querySelector("#usd");
 const euro = document.querySelector("#euro");
 
-const convert = (elem, target, isTrue, isTrue2)=> {
+const convert = (elem, target, target2)=> {
 	elem.addEventListener("input", ()=> {
 		const reqest = new XMLHttpRequest();
 	reqest.open("GET", "data.json");
@@ -10,34 +10,21 @@ const convert = (elem, target, isTrue, isTrue2)=> {
 	reqest.send();
 	reqest.addEventListener("load", ()=> {
 		const response = JSON.parse(reqest.response);
-		if(isTrue){
+		if(elem === som){
 			target.value = (elem.value / response.usd).toFixed(2);
-		}else {
+			target2.value = (elem.value / response.usd).toFixed(2);
+		}else if(elem === usd){
 			target.value = (elem.value * response.usd).toFixed(2);
-		};
+		}else if(elem ===euro){
+			target.value = (elem.value * response.euro).toFixed(2);
+			target2.value = (response.euro * response.usd).toFixed(2);
+		}
 		elem.value === "" ? (target.value = "") : null;
 	});
-	elem.addEventListener("input", ()=> {
-		const gun = new XMLHttpRequest();
-		gun.open("GET", "data2.json");
-		gun.setRequestHeader("Content-type", "application/json");
-		gun.send();
-		gun.addEventListener("load", ()=> {
-			const form = JSON.parse(gun.form);
-			if(isTrue2){
-				target.value = (elem.value / form.euro).toFixed(2);
-			}else {
-				target.value = (elem.value * form.euro).toFixed(2);
-			}
-			elem.value === "" ? (target.value = "") : null;
-		});
-	});
+
 	});
 };
 
-convert(som, usd, 12);
-convert(usd, som);
-convert(som, euro, 15);
-convert(euro, som)
-convert(euro, usd, 12);
-convert(usd, euro)
+convert(som, usd, euro);
+convert(usd,som,euro)
+convert(euro,som,usd)
